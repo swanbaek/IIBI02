@@ -1,0 +1,71 @@
+drop table member;
+ 
+create table member(
+  idx varchar2(8) not null,
+  name varchar2(30) not null,
+  userid varchar2(20) constraint member_userid_pk primary key,
+  email varchar2(100),
+  pwd varchar2(16) not null,
+  indate date default sysdate
+ 
+);
+--추가
+create sequence member_idx_seq nocache;
+ 
+create table board2(
+  idx number(20) primary key,
+  sname varchar2(20) not null,
+  snum number(20) not null,
+  surl varchar2(80),
+  uname varchar2(20) not null,
+  pwd varchar2(20) not null,
+  subject varchar2(80) not null,
+  msg varchar2(400),
+  wdate date default sysdate,
+  readnum number(10)
+);
+ 
+create sequence board2_idx_seq nocache;
+ 
+create table shopstyle(
+  snum number(8) constraint shopstyle_snum_pk primary key,
+  scode varchar2(5) constraint shopstyle_scode_uk unique,
+  sage varchar2(10)
+);
+create sequence shopstyle_scnum_seq start with 1 increment by 1 nocache;
+ 
+select * from shopstyle;
+ 
+drop table shops;
+create table shops(
+  snum number(10) constraint shops_snum_pk primary key,
+  sname varchar2(20) not null,
+  ssex varchar2(5) not null,
+  sstyle_fk varchar2(10) constraint shops_sstyle_fk references shopstyle(scode),
+  smemo varchar2(100),
+  surl varchar2(100) not null,
+  sdate date
+);
+update shops set sdate='sysdate' where snum=1;
+ 
+create sequence shops_snum_seq nocache;
+ 
+create table myshops(
+  idx number(10) constraint myshops_idx_pk primary key,
+  ssnum number(10) constraint myshops_ssnum_fk references shops(snum),
+  pdate date,
+  ssname varchar2(20) constraint myshops_ssname_fk references member(userid)
+);
+ 
+--추가
+create sequence myshops_idx_seq nocache;
+ 
+--추가
+ insert into shopstyle values(shopstyle_scnum_seq.nextval, '10','청순청순한');
+ insert into shopstyle values(shopstyle_scnum_seq.nextval, '11','여자여자한');
+ insert into shopstyle values(shopstyle_scnum_seq.nextval, '12','편안편안한');
+ insert into shopstyle values(shopstyle_scnum_seq.nextval, '13','특별특별한');
+ 
+ insert into shopstyle values(shopstyle_scnum_seq.nextval, '20','댄디간지한');
+ insert into shopstyle values(shopstyle_scnum_seq.nextval, '21','편안편안한');
+ insert into shopstyle values(shopstyle_scnum_seq.nextval, '22','특별특별한');
