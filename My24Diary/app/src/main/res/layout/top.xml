@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0" android:padding="3dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/t00"
+            android:id="@+id/imageButton"
+            android:background="#00000000"
+            android:layout_weight="0"
+            android:scaleType="centerInside"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/t02"
+            android:id="@+id/imageButton2"
+            android:background="#00000000"
+            android:layout_weight="0"
+            android:scaleType="centerInside"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/t04"
+            android:id="@+id/imageButton3"
+            android:background="#00000000"
+            android:layout_weight="0"
+            android:scaleType="centerInside"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/t06"
+            android:id="@+id/imageButton4"
+            android:background="#00000000"
+            android:layout_weight="0"
+            android:scaleType="centerInside"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
