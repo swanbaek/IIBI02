@@ -69,3 +69,6 @@ create sequence myshops_idx_seq nocache;
  insert into shopstyle values(shopstyle_scnum_seq.nextval, '20','댄디간지한');
  insert into shopstyle values(shopstyle_scnum_seq.nextval, '21','편안편안한');
  insert into shopstyle values(shopstyle_scnum_seq.nextval, '22','특별특별한');
+ 
+ --추가
+ --추가
