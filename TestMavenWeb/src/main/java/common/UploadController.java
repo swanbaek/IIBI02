@@ -28,7 +28,10 @@ public class UploadController {
 		System.out.println("contentType="+file.getContentType());
 		
 		file.transferTo(new File(upDir, file.getOriginalFilename()));
+		
+		
 		System.out.println("Upload완료");
+		
 		return new ResponseEntity<String>(file.getOriginalFilename(),HttpStatus.OK);
 	}
 }
